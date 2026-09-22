@@ -1,0 +1,62 @@
+@import 'tailwindcss';
+
+/* ---------- Brand design tokens ----------
+   Exposed to Tailwind as color/font utilities:
+   bg-navy, text-ink, border-line, font-serif, etc. */
+@theme {
+  --color-blue: #0769b2;
+  --color-blue-deep: #084c82;
+  --color-navy: #061d33;
+  --color-ink: #0b0b0c;
+  --color-grey: #5b6572;
+  --color-pale: #f2f6fb;
+  --color-line: #dce4ec;
+
+  --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Source Serif 4', Georgia, serif;
+}
+
+/* ---------- Base layer ---------- */
+@layer base {
+  :root {
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  html {
+    scroll-padding-top: 90px;
+    scroll-behavior: smooth;
+  }
+
+  html,
+  body {
+    height: auto;
+  }
+
+  body {
+    margin: 0;
+    background: #ffffff;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    line-height: 1.15;
+    margin: 0;
+    color: var(--color-ink);
+  }
+}
